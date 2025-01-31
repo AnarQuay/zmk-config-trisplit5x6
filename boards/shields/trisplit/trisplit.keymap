@@ -1,0 +1,167 @@
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more instructions.
+    // Define a default keymap here.
+    // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    &lt {
+        tapping-term-ms = <250>;
+    };
+    &led_strip {
+        chain-length = <30>;
+    };
+    &mt {
+    tapping-term-ms = <400>;
+    };
+
+    macros {
+        SCSHT: SCSHT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        WDV: WDV {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        COPY: COPY {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <2>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        PASTE: PASTE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <3>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        CUT: CUT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <4>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp X>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        SAVE: SAVE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <5>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        BKSTP: BKSTP {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <6>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp Z>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {//  layer0
+            display-name = "Typing"
+            bindings = < 
+            //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
+                &kp ESC         &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &kp DEL         &kp SCSHT       &kp WDV         &kp KP_NLCK     &kp C_VOL_UP    &kp C_PP        &kp COPY
+            //  LKey 7          |LKey 8         |LKey 9         |LKey 10        |LKey 11        |LKey 12        |RKey 7         |RKey 8         |RKey 9         |RKey 10        |RKey 11        |RKey 12        |MKey 7         |MKey 8         |MKey 9         |MKey 10        |MKey 11        |MKey 12
+                &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp p           &mt MINUS EQUAL &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp C_VOL_DN    &kp C_MUTE      &kp PASTE
+            //  LKey 13         |LKey 14        |LKey 15        |LKey 16        |LKey 17        |LKey 18        |RKey 13        |RKey 14        |RKey 15        |RKey 16        |RKey 17        |RKey 18        |MKey 13        |MKey 14        |MKey 15        |MKey 16        |MKey 17        |MKey 18
+                &kp GRAVE       &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt LBKT RBKT   &kp ENTER       &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp BKSTP       &kp SAVE        &kp CUT
+            //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
+                &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SCOLON      &kp LSHFT       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp PG_UP       &kp UP          &kp PG_DN
+            //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
+                &kp LCTRL       &kp LGUI        &kp LALT        &kp BSPC        &kp SPACE       &lt 1 ENTER     &lt 2 LGUI      &kp SPACE       &kp BSPC        &kp APOS        &kp BSLASH      &kp SLASH       &lt 3 HOME      &kp KP_N0       &mt END BSPC    &kp LEFT        &kp DOWN        &kp RIGHT
+            >;
+        };
+        Function_layer {//  layer1
+            display-name = "FunctionsL"
+            bindings = < 
+            //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
+                &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 7          |LKey 8         |LKey 9         |LKey 10        |LKey 11        |LKey 12        |RKey 7         |RKey 8         |RKey 9         |RKey 10        |RKey 11        |RKey 12        |MKey 7         |MKey 8         |MKey 9         |MKey 10        |MKey 11        |MKey 12
+                &kp SAVE        &kp BKSTP       &kp PASTE       &kp COPY        &kp CUT         &rgb_ug RGB_BRI &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 13         |LKey 14        |LKey 15        |LKey 16        |LKey 17        |LKey 18        |RKey 13        |RKey 14        |RKey 15        |RKey 16        |RKey 17        |RKey 18        |MKey 13        |MKey 14        |MKey 15        |MKey 16        |MKey 17        |MKey 18
+                &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_BRD &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
+                &trans          &trans          &trans          &trans          &to 4           &rgb_ug RGB_TOG &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
+                &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            >;
+        };
+        Function_layer {//  layer2
+            display-name = "FunctionsR"
+            bindings = < 
+            //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
+                &trans          &trans          &trans          &trans          &trans          &trans          &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12         &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 7          |LKey 8         |LKey 9         |LKey 10        |LKey 11        |LKey 12        |RKey 7         |RKey 8         |RKey 9         |RKey 10        |RKey 11        |RKey 12        |MKey 7         |MKey 8         |MKey 9         |MKey 10        |MKey 11        |MKey 12
+                &trans          &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_BRI &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 13         |LKey 14        |LKey 15        |LKey 16        |LKey 17        |LKey 18        |RKey 13        |RKey 14        |RKey 15        |RKey 16        |RKey 17        |RKey 18        |MKey 13        |MKey 14        |MKey 15        |MKey 16        |MKey 17        |MKey 18
+                &trans          &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_BRD &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
+                &trans          &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_TOG &to 4           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
+                &trans          &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            >;
+        };
+        Function_layer {//  layer3
+            display-name = "FunctionsM"
+            bindings = < 
+            //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            //  LKey 7          |LKey 8         |LKey 9         |LKey 10        |LKey 11        |LKey 12        |RKey 7         |RKey 8         |RKey 9         |RKey 10        |RKey 11        |RKey 12        |MKey 7         |MKey 8         |MKey 9         |MKey 10        |MKey 11        |MKey 12
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_BRI &trans          &trans          &trans          &trans          &trans
+            //  LKey 13         |LKey 14        |LKey 15        |LKey 16        |LKey 17        |LKey 18        |RKey 13        |RKey 14        |RKey 15        |RKey 16        |RKey 17        |RKey 18        |MKey 13        |MKey 14        |MKey 15        |MKey 16        |MKey 17        |MKey 18
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_BRD &trans          &trans          &trans          &trans          &trans
+            //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_TOG &to 4           &trans          &trans          &trans          &trans
+            //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &trans
+            >;
+        };
+        Function_layer {//  layer4
+            display-name = "Bluetooth"
+            bindings = < 
+            //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
+                &bootloader     &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &bootloader     &trans          &trans          &trans          &trans          &trans          &bootloader
+            //  LKey 7          |LKey 8         |LKey 9         |LKey 10        |LKey 11        |LKey 12        |RKey 7         |RKey 8         |RKey 9         |RKey 10        |RKey 11        |RKey 12        |MKey 7         |MKey 8         |MKey 9         |MKey 10        |MKey 11        |MKey 12
+                &trans          &trans          &trans          &trans          &trans          &bt BT_CLR      &bt BT_CLR      &trans          &trans          &trans          &trans          &trans          &bt BT_CLR      &trans          &trans          &trans          &trans          &trans
+            //  LKey 13         |LKey 14        |LKey 15        |LKey 16        |LKey 17        |LKey 18        |RKey 13        |RKey 14        |RKey 15        |RKey 16        |RKey 17        |RKey 18        |MKey 13        |MKey 14        |MKey 15        |MKey 16        |MKey 17        |MKey 18
+                &trans          &trans          &trans          &trans          &trans          &bt BT_NXT      &bt BT_NXT      &trans          &trans          &trans          &trans          &trans          &bt BT_NXT      &trans          &trans          &trans          &trans          &trans
+            //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
+                &trans          &trans          &trans          &trans          &trans          &bt BT_PRV      &bt BT_PRV      &trans          &trans          &trans          &trans          &trans          &bt BT_PRV      &trans          &trans          &trans          &trans          &trans
+            //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
+                &trans          &trans          &trans          &sys_reset      &trans          &to 0           &to 0           &trans          &sys_reset      &trans          &trans          &trans          &to 0           &trans          &sys_reset      &trans          &trans          &trans
+            >;
+        };
+    };
+};

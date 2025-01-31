@@ -1,0 +1,16 @@
+if SHIELD_TRISPLIT_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "trisplit"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_TRISPLIT_LEFT
+
+if SHIELD_TRISPLIT_LEFT || SHIELD_TRISPLIT_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_TRISPLIT_LEFT || SHIELD_TRISPLIT_RIGHT
