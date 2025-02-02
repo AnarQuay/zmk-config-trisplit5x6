@@ -6,6 +6,49 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/led/led.h>
+
+#define DEFAULT 0
+
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
+        };
+    };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
+            low-power-enable;
+        };
+    };
+};
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <30>; /* number of LEDs */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
+    };
+};
 
 / {
     &lt {
@@ -158,9 +201,9 @@
             //  LKey 13         |LKey 14        |LKey 15        |LKey 16        |LKey 17        |LKey 18        |RKey 13        |RKey 14        |RKey 15        |RKey 16        |RKey 17        |RKey 18        |MKey 13        |MKey 14        |MKey 15        |MKey 16        |MKey 17        |MKey 18
                 &trans          &trans          &trans          &trans          &trans          &bt BT_NXT      &bt BT_NXT      &trans          &trans          &trans          &trans          &trans          &bt BT_NXT      &trans          &trans          &trans          &trans          &trans
             //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
-                &trans          &trans          &trans          &trans          &trans          &bt BT_PRV      &bt BT_PRV      &trans          &trans          &trans          &trans          &trans          &bt BT_PRV      &trans          &trans          &trans          &trans          &trans
+                &trans          &trans          &trans          &trans          &out OUT_BLE    &bt BT_PRV      &bt BT_PRV      &out OUT_BLE    &trans          &trans          &trans          &trans          &bt BT_PRV      &out OUT_BLE    &trans          &trans          &trans          &trans
             //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
-                &trans          &trans          &trans          &sys_reset      &trans          &to 0           &to 0           &trans          &sys_reset      &trans          &trans          &trans          &to 0           &trans          &sys_reset      &trans          &trans          &trans
+                &trans          &trans          &sys_reset      &trans          &out OUT_USB    &to 0           &to 0           &out OUT_USB    &trans          &sys_reset      &trans          &trans          &to 0           &out OUT_USB    &trans          &sys_reset      &trans          &trans
             >;
         };
     };

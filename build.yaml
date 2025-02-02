@@ -20,4 +20,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: helix_right
+    shield: trisplit_left
+  - board: nice_nano_v2
+    shield: trisplit_right
+  - board: nice_nano_v2
+    shield: trisplit_macro
