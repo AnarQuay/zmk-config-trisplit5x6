@@ -1,15 +1,9 @@
 // This file was generated from a template. Edit it to match your keyboard.
 // See https://zmk.dev/docs/development/hardware-integration/new-shield for more
 // instructions.
-//#include "trisplit.dtsi"
 
-# board: [ "nice_nano_v2" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: nice_nano_v2
-#     shield: reviung41
+#include "trisplit.dtsi"
 
----
 &kscan0 {
     // Replace these comments with the GPIO pins in the matrix for the left side.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
