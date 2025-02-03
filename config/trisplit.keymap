@@ -50,17 +50,17 @@
     };
 };
 
-/ {
-    &lt {
-        tapping-term-ms = <250>;
-    };
-    &led_strip {
-        chain-length = <30>;
-    };
-    &mt {
-    tapping-term-ms = <400>;
-    };
+&lt {
+    tapping-term-ms = <250>;
+};
+&led_strip {
+    chain-length = <30>;
+};
+&mt {
+tapping-term-ms = <400>;
+};
 
+/ {
     macros {
         SCSHT: SCSHT {
             compatible = "zmk,behavior-macro";
