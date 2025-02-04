@@ -146,7 +146,7 @@ tapping-term-ms = <400>;
                 &kp LCTRL       &kp LEFT_GUI    &kp LEFT_ALT    &kp BACKSPACE   &kp SPACE       &lt 1 ENTER     &lt 2 LEFT_GUI  &kp SPACE       &kp BACKSPACE   &kp APOS        &kp BACKSLASH   &kp SLASH       &lt 3 HOME      &kp KP_N0     &mt END BACKSPACE &kp LEFT        &kp DOWN        &kp RIGHT
             >;
         };
-        Function_layer {//  layer1
+        FunctionL_layer {//  layer1
             display-name = "FunctionsL";
             bindings = < 
             //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
@@ -161,7 +161,7 @@ tapping-term-ms = <400>;
                 &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
             >;
         };
-        Function_layer {//  layer2
+        FunctionR_layer {//  layer2
             display-name = "FunctionsR";
             bindings = < 
             //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
@@ -176,7 +176,7 @@ tapping-term-ms = <400>;
                 &trans          &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
             >;
         };
-        Function_layer {//  layer3
+        FunctionM_layer {//  layer3
             display-name = "FunctionsM";
             bindings = < 
             //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
@@ -191,7 +191,7 @@ tapping-term-ms = <400>;
                 &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &trans
             >;
         };
-        Function_layer {//  layer4
+        Bluetooth_layer {//  layer4
             display-name = "Bluetooth";
             bindings = < 
             //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
