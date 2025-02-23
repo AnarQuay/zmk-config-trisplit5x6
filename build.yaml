@@ -27,5 +27,3 @@ include:
     shield: trisplit_right
   - board: nice_nano_v2
     shield: trisplit_macro
-  - board: nice_nano_v2
-    shield: settings_reset
