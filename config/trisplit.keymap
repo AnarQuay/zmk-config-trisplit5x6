@@ -28,7 +28,6 @@
 &spi3 {
     compatible = "nordic,nrf-spim";
     status = "okay";
-
     pinctrl-0 = <&spi3_default>;
     pinctrl-1 = <&spi3_sleep>;
     pinctrl-names = "default", "sleep";
@@ -195,13 +194,13 @@ tapping-term-ms = <250>;
             display-name = "Bluetooth";
             bindings = < 
             //  LKey 1          |LKey 2         |LKey 3         |LKey 4         |LKey 5         |LKey 6         |RKey 1         |RKey 2         |RKey 3         |RKey 4         |RKey 5         |RKey 6         |MKey 1         |MKey 2         |MKey 3         |MKey 4         |MKey 5         |MKey 6
-                &bootloader     &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &bootloader     &trans          &trans          &trans          &trans          &trans          &bootloader
+                &bootloader     &trans          &trans          &trans          &bt BT_SEL 0    &trans          &trans          &bt BT_SEL 0    &trans          &trans          &trans          &bootloader     &trans          &bt BT_SEL 0    &trans          &trans          &trans          &bootloader
             //  LKey 7          |LKey 8         |LKey 9         |LKey 10        |LKey 11        |LKey 12        |RKey 7         |RKey 8         |RKey 9         |RKey 10        |RKey 11        |RKey 12        |MKey 7         |MKey 8         |MKey 9         |MKey 10        |MKey 11        |MKey 12
-                &trans          &trans          &trans          &trans          &trans          &bt BT_CLR      &bt BT_CLR      &trans          &trans          &trans          &trans          &trans          &bt BT_CLR      &trans          &trans          &trans          &trans          &trans
+                &trans          &trans          &trans          &trans          &bt BT_SEL 1    &bt BT_NXT      &bt BT_NXT      &bt BT_SEL 1    &trans          &trans          &trans          &trans          &bt BT_NXT      &bt BT_SEL 1    &trans          &trans          &trans          &trans
             //  LKey 13         |LKey 14        |LKey 15        |LKey 16        |LKey 17        |LKey 18        |RKey 13        |RKey 14        |RKey 15        |RKey 16        |RKey 17        |RKey 18        |MKey 13        |MKey 14        |MKey 15        |MKey 16        |MKey 17        |MKey 18
-                &trans          &trans          &trans          &trans          &trans          &bt BT_NXT      &bt BT_NXT      &trans          &trans          &trans          &trans          &trans          &bt BT_NXT      &trans          &trans          &trans          &trans          &trans
+                &trans          &trans          &trans          &trans          &bt BT_SEL 2    &bt BT_PRV      &bt BT_PRV      &bt BT_SEL 2    &trans          &trans          &trans          &trans          &bt BT_PRV      &bt BT_SEL 2    &trans          &trans          &trans          &trans
             //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
-                &trans          &trans          &trans          &trans          &out OUT_BLE    &bt BT_PRV      &bt BT_PRV      &out OUT_BLE    &trans          &trans          &trans          &trans          &bt BT_PRV      &out OUT_BLE    &trans          &trans          &trans          &trans
+                &trans          &trans          &trans          &trans          &out OUT_BLE    &bt BT_CLR      &bt BT_CLR      &out OUT_BLE    &trans          &trans          &trans          &trans          &bt BT_CLR      &out OUT_BLE    &trans          &trans          &trans          &trans
             //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
                 &trans          &trans          &sys_reset      &trans          &out OUT_USB    &to 0           &to 0           &out OUT_USB    &trans          &sys_reset      &trans          &trans          &to 0           &out OUT_USB    &trans          &sys_reset      &trans          &trans
             >;
