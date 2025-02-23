@@ -164,7 +164,7 @@ tapping-term-ms = <250>;
             //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
                 &trans          &trans          &trans          &trans          &to 5           &rgb_ug RGB_TOG &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
             //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
-                &to 4           &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+                &trans          &trans          &trans          &to 4           &trans          &to 0           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
             >;
         };
         FunctionR_layer {//  layer2
@@ -179,7 +179,7 @@ tapping-term-ms = <250>;
             //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
                 &trans          &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_TOG &to 5           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
             //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
-                &trans          &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &to 4           &trans          &trans          &trans          &trans          &trans          &trans
+                &trans          &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &to 4           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
             >;
         };
         FunctionM_layer {//  layer3
@@ -194,7 +194,7 @@ tapping-term-ms = <250>;
             //  LKey 19         |LKey 20        |LKey 21        |LKey 22        |LKey 23        |LKey 24        |RKey 19        |RKey 20        |RKey 21        |RKey 22        |RKey 23        |RKey 24        |MKey 19        |MKey 20        |MKey 21        |MKey 22        |MKey 23        |MKey 24
                 &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_TOG &to 5           &trans          &trans          &trans          &trans
             //  LKey 25         |LKey 26        |LKey 27        |LKey 28        |LKey 29        |LKey 30        |RKey 25        |RKey 26        |RKey 27        |RKey 28        |RKey 29        |RKey 30        |MKey 25        |MKey 26        |MKey 27        |MKey 28        |MKey 29        |MKey 30 
-                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &trans          &trans          &trans          &to 4           
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &to 0           &trans          &to 4           &trans          &trans          &trans          
             >;
         };
         Rgb_layer {//  layer4
